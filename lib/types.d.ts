@@ -9,7 +9,8 @@ export interface ValidationResult {
 /** Descriptions for reasons why parsing a PAC/STAC code failed */
 export declare enum ValidationFailureReason {
     NO_MATCH = "No authorisation code was found",
-    INVALID_FORMAT = "Authorisation code is not formatted correctly"
+    INVALID_FORMAT = "Authorisation code is not formatted correctly",
+    CEASED_OPERATOR = "The PAC Code provider has ceased operations"
 }
 /** Shape of metadata.json objects */
 export interface ServiceProviderData {

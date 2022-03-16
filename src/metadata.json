@@ -1,6 +1,6 @@
 {
   "$schema": "../lib/metadata.schema.json",
-  "version": "1.1",
+  "version": "1.2",
   "serviceProviders": [
     {
       "id": "BTC",
@@ -82,11 +82,51 @@
       "instructions": "https://www.vodafone.co.uk/help-and-information/cancel-your-account",
       "logo": "https://logo.clearbit.com/vodafone.co.uk",
       "lastUpdated": "2022-03-15"
+    },
+    {
+      "id": "LCS",
+      "fullName": "Three Smarty",
+      "shortName": "SMARTY",
+      "website": "https://smarty.co.uk/",
+      "instructions": "https://help.smarty.co.uk/en/articles/952726",
+      "logo": "https://logo.clearbit.com/smarty.co.uk",
+      "lastUpdated": "2022-03-16"
+    },
+    {
+      "id": "TKM",
+      "fullName": "Talkmobile",
+      "shortName": "Talkmobile",
+      "website": "https://talkmobile.co.uk/",
+      "instructions": "https://talkmobile.co.uk/switching",
+      "logo": "https://logo.clearbit.com/talkmobile.co.uk",
+      "lastUpdated": "2022-03-16"
     }
   ],
   "aliases": {
     "TSL": "VTM",
-    "VCN": "VUK"
+    "VCN": "VUK",
+    "VOD": "VUK",
+    "H3G": "HTG",
+    "CEL": "TEL"
   },
-  "dead": []
+  "dead": [
+    {
+      "id": "ORG",
+      "fullName": "Orange",
+      "shortName": "Orange",
+      "website": "https://orange.co.uk/",
+      "instructions": "https://orange.co.uk/",
+      "logo": "https://logo.clearbit.com/orange.co.uk",
+      "lastUpdated": "2022-03-16"
+    },
+    {
+      "id": "ONE",
+      "fullName": "T-Mobile",
+      "shortName": "T-Mobile",
+      "website": "https://t-mobile.co.uk/",
+      "instructions": "https://t-mobile.co.uk/",
+      "logo": "https://logo.clearbit.com/telekom.com",
+      "lastUpdated": "2022-03-16"
+    }
+  ]
 }

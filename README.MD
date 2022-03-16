@@ -32,6 +32,10 @@ Instructions for using client-side with unpkg etc coming soon...
 
 * Run `yarn build` before commiting changes, and `yarn schema` if you've made a difference to any types in src/types.ts.
 
+### Contributing
+
+Please read CONTRIBUTING.md :)
+
 ## Example usage
 
 ### React

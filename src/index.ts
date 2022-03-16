@@ -5,7 +5,7 @@ import {
   FormattedAuthCode,
   ServiceProviderData,
 } from "./types";
-import { serviceProviders } from "./metadata.json";
+import { serviceProviders, aliases } from "./metadata.json";
 
 /** A PAC code consists of a three letter SPID and six unique numeric digits */
 export const PAC_REGEX = /^([A-Z]{3})([0-9]{6})$/;
@@ -55,7 +55,10 @@ export function validateAuthCode(
  *
  * @returns The code split into two, unless it's invalid
  */
-export function splitAuthCode(code: string, type: AuthCodeType): FormattedAuthCode | null {
+export function splitAuthCode(
+  code: string,
+  type: AuthCodeType
+): FormattedAuthCode | null {
   const split = code.match(/[a-zA-Z]+|[0-9]+/g);
 
   if (!split || split.length < 1) {
@@ -76,10 +79,22 @@ export function splitAuthCode(code: string, type: AuthCodeType): FormattedAuthCo
 }
 
 /**
- * 
+ *
  * @param id The ID to search for
  * @returns The ServiceProviderData object for the given ID
  */
-export function getServiceProviderDataById(id: string): ServiceProviderData | undefined {
-  return (serviceProviders as ServiceProviderData[]).find(x => x.id === id);
+export function getServiceProviderDataById(
+  id: string
+): ServiceProviderData | undefined {
+  const found = (serviceProviders as ServiceProviderData[]).find(
+    (x) => x.id === id
+  );
+  if (!found) {
+    const alias = (aliases as Record<string, string>)[id];
+    if (!alias) return undefined;
+    return (serviceProviders as ServiceProviderData[]).find(
+      (x) => x.id === alias
+    );
+  }
+  return found;
 }
