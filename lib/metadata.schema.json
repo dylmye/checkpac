@@ -1,0 +1,95 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Record<string,string>": {
+            "type": "object"
+        },
+        "ServiceProviderData": {
+            "description": "Shape of metadata.json objects",
+            "properties": {
+                "fullName": {
+                    "description": "The trading name of the SP.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "The service provider's ID (SPID.)",
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                },
+                "instructions": {
+                    "description": "A URL linking to specific instructions on how to\nget the PAC/STAC code from the SP.",
+                    "format": "uri",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "lastUpdated": {
+                    "description": "The date YYYY-MM-DD that this SP was last updated.",
+                    "format": "date",
+                    "type": "string"
+                },
+                "logo": {
+                    "description": "A URL pointing to an image representing the SP.",
+                    "format": "uri",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "shortName": {
+                    "description": "The name most customers know the SP by.",
+                    "type": "string"
+                },
+                "website": {
+                    "description": "The homepage URL for the SP in your country.",
+                    "format": "uri",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fullName",
+                "id",
+                "instructions",
+                "lastUpdated",
+                "logo",
+                "shortName",
+                "website"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "aliases": {
+            "$ref": "#/definitions/Record<string,string>",
+            "description": "A key:value pair array, where the key is the alias and the value is the ID of the record it represents."
+        },
+        "dead": {
+            "description": "A list of service providers that are no longer operating.",
+            "items": {
+                "$ref": "#/definitions/ServiceProviderData"
+            },
+            "type": "array"
+        },
+        "serviceProviders": {
+            "description": "A list of service providers.",
+            "items": {
+                "$ref": "#/definitions/ServiceProviderData"
+            },
+            "type": "array"
+        },
+        "version": {
+            "description": "The version of this metadata file.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "aliases",
+        "dead",
+        "serviceProviders",
+        "version"
+    ],
+    "type": "object"
+}
+

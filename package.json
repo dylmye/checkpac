@@ -2,12 +2,58 @@
   "name": "checkpac",
   "version": "1.0.0",
   "description": "Validate PAC/STAC codes, with rich metadata included",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "private": "false",
+  "homepage": "https://github.com/dylmye/checkpac",
+  "author": "Dylan Myers (https://dylmye.me)",
+  "license": "ISC",
+  "keywords": [
+    "pac",
+    "stac",
+    "cellular",
+    "mobile",
+    "MVNO",
+    "MNO",
+    "number",
+    "validation",
+    "validator"
+  ],
+  "main": "lib/index",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "build": "tsc",
+    "schema": "typescript-json-schema src/types.ts Metadata -o lib/metadata.schema.json --strictNullChecks --required",
+    "prepublish": "yarn build && yarn schema"
+  },
+  "devDependencies": {
+    "@tsconfig/node12": "^1.0.9",
+    "@types/expect": "^24.3.0",
+    "@types/mocha": "^8.2.3",
+    "mocha": "^8.4.0",
+    "ts-mocha": "^9.0.2",
+    "typescript": "^4.5.5",
+    "typescript-json-schema": "^0.53.0"
+  },
   "files": [
     "/dist"
   ],
-  "repository": "https://github.com/dylmye/checkpac",
-  "author": "Dylan Myers",
-  "license": "ISC"
+  "engines": {
+    "node": ">10.12.0"
+  },
+  "repository": "github:dylmye/checkpac",
+  "bugs": {
+    "url": "https://github.com/dylmye/checkpac/issues"
+  },
+  "directories": {
+    "lib": "./lib",
+    "src": "./src",
+    "test": "./test"
+  },
+  "mocha": {
+    "extension": [
+      "ts"
+    ],
+    "spec": "test/**/*.spec.ts",
+    "require": "ts-mocha"
+  }
 }

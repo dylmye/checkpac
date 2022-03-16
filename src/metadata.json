@@ -1,7 +1,8 @@
 {
-  "version": "1.0",
-  "serviceProviders": {
-    "BTC": {
+  "$schema": "../lib/metadata.schema.json",
+  "version": "1.1",
+  "serviceProviders": [
+    {
       "id": "BTC",
       "fullName": "BT Mobile Consumer",
       "shortName": "BT Mobile",
@@ -10,16 +11,16 @@
       "logo": "https://logo.clearbit.com/bt.com",
       "lastUpdated": "2021-04-22"
     },
-    "ONE": {
+    {
       "id": "ONE",
-      "fullName": "BT EE",
+      "fullName": "EE",
       "shortName": "EE",
       "website": "https://ee.co.uk",
       "instructions": "https://ee.co.uk/help/help-new/managing-and-using-my-account/leaving-ee/what-is-a-pac-code",
       "logo": "https://logo.clearbit.com/ee.co.uk",
       "lastUpdated": "2021-04-22"
     },
-    "GGF": {
+    {
       "id": "GGF",
       "fullName": "Giffgaff",
       "shortName": "Giffgaff",
@@ -28,7 +29,7 @@
       "logo": "https://logo.clearbit.com/giffgaff.com",
       "lastUpdated": "2021-04-22"
     },
-    "VRG": {
+    {
       "id": "VRG",
       "fullName": "Virgin Mobile",
       "shortName": "Virgin",
@@ -37,7 +38,7 @@
       "logo": null,
       "lastUpdated": "2021-04-22"
     },
-    "TEL": {
+    {
       "id": "TEL",
       "fullName": "Telefónica o2",
       "shortName": "o2",
@@ -46,16 +47,16 @@
       "logo": "https://logo.clearbit.com/o2.co.uk",
       "lastUpdated": "2021-04-22"
     },
-    "HTG": {
+    {
       "id": "HTG",
-      "fullName": "Hutchinson 3G UK",
+      "fullName": "Three Mobile",
       "shortName": "Three UK",
       "website": "https://www.three.co.uk",
       "instructions": "https://www.three.co.uk/support/switching/leaving-three",
       "logo": "https://logo.clearbit.com/three.co.uk",
       "lastUpdated": "2021-04-22"
     },
-    "VTM": {
+    {
       "id": "VTM",
       "fullName": "iD Mobile",
       "shortName": "iD",
@@ -63,10 +64,29 @@
       "instructions": "https://www.idmobile.co.uk/help-and-support/leaving-id",
       "logo": "https://logo.clearbit.com/idmobile.co.uk",
       "lastUpdated": "2021-04-24"
+    },
+    {
+      "id": "LEB",
+      "fullName": "Lebara Mobile",
+      "shortName": "Lebara",
+      "website": "https://mobile.lebara.com/gb/en/",
+      "instructions": "https://mobile.lebara.com/gb/en/leave-lebara",
+      "logo": "https://logo.clearbit.com/lebara.com",
+      "lastUpdated": "2022-03-15"
+    },
+    {
+      "id": "VUK",
+      "fullName": "Vodafone / Voxi",
+      "shortName": "Vodafone / Voxi",
+      "website": "https://www.vodafone.co.uk/",
+      "instructions": "https://www.vodafone.co.uk/help-and-information/cancel-your-account",
+      "logo": "https://logo.clearbit.com/vodafone.co.uk",
+      "lastUpdated": "2022-03-15"
     }
-  },
+  ],
   "aliases": {
-    "TSL": "VTM"
+    "TSL": "VTM",
+    "VCN": "VUK"
   },
   "dead": []
 }
