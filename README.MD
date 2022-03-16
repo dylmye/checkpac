@@ -5,10 +5,10 @@ A simple array of validation tools for PAC and STAC codes, as defined by the _Mo
 This package aims to follow a structure similar to libphonenumber-js, providing the following methods:
 
 * Validate a complete PAC/STAC number, optionally with metadata, optionally only PAC or STAC
-* Check-as-you-type
+* Check-as-you-type (Work in progress)
 * Validate SP (service provider) identifiers
 
-**This package will not check whether the code is active and usable; merely that it is in the correct format.**
+**This package will not check whether the code is active and usable; merely that it is in the correct format.** You still need to validate against Syniverse/the Central Switching System. This library is best for front-end validation.
 
 ## PAC/STAC TL;DR
 
@@ -30,7 +30,7 @@ Instructions for using client-side with unpkg etc coming soon...
 
 > This project is a work in progress
 
-* Make sure to run `tsc` before pushing. Should probably be part of the commit process.
+* Run `yarn build` before commiting changes, and `yarn schema` if you've made a difference to any types in src/types.ts.
 
 ## Example usage
 
@@ -38,13 +38,13 @@ Instructions for using client-side with unpkg etc coming soon...
 
 ```jsx
 import React, { useCallback, useState } from "react";
-import validate from "checkpac";
+import { validateAuthCode } from "checkpac";
 
 const ExampleForm = props => {
   const [authForm, updateAuthForm] = useState({});
 
   const onSubmit = useCallback(() => {
-    const success = validate(authForm.code);
+    const { success } = validateAuthCode(authForm.code);
     if (success) {
       // dispatch some api action
     } else {
